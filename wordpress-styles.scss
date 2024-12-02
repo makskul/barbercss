@@ -1,0 +1,68 @@
+.alignleft {
+  float: left;
+  margin-right: 20px;
+}
+
+.wp-caption {
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+input[type="text"], input[type="email"], textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+blockquote {
+  font-style: italic;
+  border-left: 4px solid #ccc;
+  padding-left: 20px;
+}
+
+.wp-block-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.main-navigation a {
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.main-navigation li:hover > ul {
+  display: block;
+}
+
+.widget-title {
+  font-size: 20px;
+  color: #333;
+}
+
+.widget-area {
+  background-color: #f7f7f7;
+  padding: 15px;
+}
+
+h1, h2, h3 {
+  font-family: 'Your Font', sans-serif;
+  font-size: 32px;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+

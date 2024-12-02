@@ -1,0 +1,122 @@
+.table-container {
+  position: relative;
+  overflow-x: scroll;
+  width: 94%;
+  margin: 0 auto;
+
+  @include media-min(md) {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+.table-container::-webkit-scrollbar {
+  display: none;
+}
+
+.table-container::-webkit-scrollbar {
+  width: 5px;
+  height: 4px;
+  background-color: #aaa; /* or add it to the track */
+  border-radius: 2px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 2px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Изменение цвета при наведении */
+}
+
+.scrollable-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 18px;
+
+  .cell-th {
+    padding: 10px;
+    font-size: 18px;
+    color: $green-loft-400;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .body-row {
+    background-color: $table-row-bg;
+    color: white;
+  }
+}
+
+.cell-td {
+  color: $table-color;
+  padding: 18px;
+  position: relative;
+  text-align: center;
+}
+
+.cell-td:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px 0 0;
+}
+
+.cell-td:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 2px;
+  background: #E7C58357;
+  height: calc(100% - 36px);
+  margin: 18px 0;
+}
+
+.name-block {
+  background-color: $beige-400;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  color: $green-loft-400;
+  font-weight: 400;
+  padding: 18px;
+  font-size: 18px;
+  line-height: 42px;
+  position: relative;
+  clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%);
+  padding-right: 64px;
+  height: 80px;
+
+  span {
+    white-space: nowrap;
+  }
+}
+
+.price-block {
+  padding-left: 50px;
+}
+
+.scroll-indicators {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.scroll-indicators .indicator {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #7D8A89;
+  margin: 0 5px;
+  cursor: pointer;
+
+  @include media-min(md) {
+    display: none;
+  }
+}
+
+.scroll-indicators .active {
+  background-color: #0A453F;
+}

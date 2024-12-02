@@ -1,0 +1,83 @@
+.btn {
+  background: none;
+  border: 2px solid $blue-600;
+  cursor: pointer;
+
+  &.-success {
+    border: none;
+    background: $blue-600;
+    color: $white;
+  }
+
+  @at-root .modal-footer & {
+    border-radius: 20px;
+    padding: 10px 15px;
+  }
+
+  @at-root .booking-block & {
+    border-radius: 20px;
+    margin-top: 6px;
+    padding: 5px 10px;
+    line-height: 1.2;
+  }
+}
+
+.parallelogram-button {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 16px;
+  color: $dark;
+  background-color: $yellow-500; /* Жовтий колір */
+  border: none;
+  cursor: pointer;
+  transform: skew(-20deg);
+  outline: none;
+
+  &:hover {
+    color: $dark;
+    opacity: 0.8;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    background-color: $yellow-500 /* Жовтий колір */
+  }
+
+  &::before {
+    border-radius: 5px 0 0 5px;
+    left: -19px;
+    transform: skew(360deg);
+  }
+
+  &::after {
+    border-radius: 0 5px 5px 0;
+    right: -19px;
+    transform: skew(360deg);
+  }
+
+  & > span {
+    display: block;
+    transform: skew(20deg);
+  }
+
+  &.w-full {
+    width: 100%;
+  }
+
+  &.loft {
+    background: $green-loft-400;
+    color: $white;
+  }
+
+  &.loft::before, &.loft::after {
+    background: $green-loft-400;
+  }
+}
+
+

@@ -1,0 +1,207 @@
+.tabs {
+  display: flex;
+  margin: 0 auto;
+  width: 94%;
+  z-index: 2;
+
+  @include media-min(md) {
+    width: 100%;
+  }
+}
+
+.tab-btn {
+  flex-grow: 3;
+  cursor: pointer;
+  border: none;
+  background: $tab-btn-bg;
+  box-sizing: border-box;
+  color: $green-loft;
+  text-transform: uppercase;
+  font-size: 18px;
+  padding: 18px;
+
+  @include media-min(md) {
+    padding: 26px;
+  }
+
+  @include media-min(lg) {
+    font-size: 38px;
+    padding: 36px;
+  }
+
+  &.active {
+    background: $green-loft-400;
+    color: $white;
+  }
+
+  &.beige-style {
+    background: $green-loft-400;
+    color: $beige;
+  }
+
+  &.active.beige-style {
+    background: $beige;
+    color: $green-loft-400;
+  }
+}
+
+.tab-content {
+  display: none;
+  background: $green-loft-400;
+  padding: 60px 40px;
+  box-sizing: border-box;
+  color: $tab-content-color;
+  font-size: 18px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  width: 94%;
+
+  @include media-min(md) {
+    padding: 75px 52px;
+    width: 100%;
+  }
+
+  @include media-min(lg) {
+    padding: 110px 85px;
+  }
+
+  &.active {
+    display: block;
+  }
+
+  &.active.beige-style {
+    background: $beige;
+    color: $green-loft-400;
+  }
+
+  &.not-hided {
+    display: block !important;
+  }
+
+  .tab-link-block {
+    margin-top: 20px;
+
+    @include media-min(md) {
+      margin-top: 56px;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  & .link {
+    color: $tab-content-color;
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 56px;
+    text-transform: uppercase;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &.beige-style .link {
+    color: $green-loft-400;
+  }
+}
+
+.logo-list {
+  & > li {
+    margin-bottom: 40px;
+    padding-left: 80px;
+    font-size: 18px;
+    text-transform: uppercase;
+    position: relative;
+
+    @include media-min(md) {
+      font-size: 28px;
+    }
+  }
+
+  & > li:last-child {
+    margin-bottom: 0;
+  }
+
+  & > li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-image: url("../../public/frisor-logo.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.tab-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+
+  @include media-min(md) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.tab-table-column {
+  text-align: center;
+}
+
+.tab-contact {
+  @include media-max(md) {
+    margin: 0 15px;
+  }
+
+  .tab-header {
+    background: $green-loft-400;
+    font-size: 18px;
+    padding: 18px;
+    text-align: center;
+    color: $tab-content-color;
+
+    @include media-min(md) {
+      padding: 26px;
+    }
+
+    @include media-min(lg) {
+      font-size: 38px;
+      padding: 36px;
+    }
+  }
+
+  .tab-content {
+    background: $tab-contact-content-bg;
+    color: $dark;
+    padding: 37px 32px;
+    width: 100%;
+
+    @include media-min(lg) {
+      padding: 67px 62px;
+      font-size: 26px;
+    }
+  }
+
+  .tab-table {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.top-right-img {
+  @include media-max(md) {
+    display: none;
+  }
+
+  @include media-min(md) {
+    position: absolute;
+    top: -45px;
+    right: -145px;
+    z-index: 1;
+  }
+}

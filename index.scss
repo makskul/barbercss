@@ -1,0 +1,221 @@
+body {
+  font-family: "Times New Roman";
+  background: url("../../public/noise.png") $body-bg;
+  background-size: 800px;
+  overflow-x: hidden;
+}
+
+.container {
+  @include media-between(md, lg) {
+    padding: 0 4px;
+  }
+}
+
+a {
+  color: $link-color;
+
+  &:hover {
+    color: $link-color-hover;
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.f-500 {
+  font-weight: 500;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+#goog_conv_iframe {
+  display: none;
+}
+
+h1.entry-title,
+.h2 {
+  color: $title-color;
+  font-size: 24px;
+  margin: 15px 0;
+
+  @include media-min(md) {
+    font-size: 40px;
+    margin: 25px 0;
+  }
+
+  @include media-min(md) {
+    font-size: 42px;
+  }
+
+  @include media-min(lg) {
+    font-size: 50px;
+  }
+}
+
+.section {
+  margin-top: 30px;
+
+  @include media-min(md) {
+    margin-top: 56px;
+  }
+
+  .h2 {
+    text-align: center;
+  }
+
+  &.simple .h2 {
+    margin-bottom: 100px;
+    margin-top: 120px;
+  }
+
+  &.small-w {
+
+    @include media-min(xl) {
+      padding: 0 90px;
+    }
+  }
+
+  &.md-offset {
+    @include media-max(lg) {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+
+  &.section-img-holder {
+    padding-top: 80px;
+
+    @include media-min(md) {
+      padding-top: 380px;
+    }
+  }
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.custom-content {
+  margin-bottom: 20px;
+
+  @include media-min(lg) {
+    margin-bottom: 70px;
+  }
+
+  .column {
+    width: 48%;
+  }
+
+  .column:first-child {
+    display: none;
+
+    @include media-min(md) {
+      display: inline-block;
+    }
+  }
+
+  .services-list {
+    line-height: 1.5;
+  }
+}
+
+.column.-img {
+  border-radius: 30px;
+  position: relative;
+
+  &::before {
+    background: #669eff;
+    border-radius: 30px;
+    content: " ";
+    position: absolute;
+    width: 104%;
+    height: 104%;
+    z-index: 1;
+    left: -1%;
+    top: -3%;
+    opacity: 0.76;
+  }
+
+  & img {
+    border-radius: 30px;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.section {
+  p {
+    line-height: 1.112;
+    margin-bottom: 20px;
+  }
+
+  strong, b {
+    color: #6087c8;
+  }
+}
+
+strong, b {
+  font-weight: bold;
+}
+@mixin hide-below-md {
+  @include media-max(md){
+    display: none;
+  }
+}
+.leave-bottom,
+.leave-top,
+.leave-middle {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -1;
+  opacity: 0.15;
+
+  @include hide-below-md;
+
+  @include media-between(md,lg) {
+    width: 800px;
+    height: 800px;
+  }
+
+  @include media-between(lg,xl) {
+    width: 1200px;
+    height: 1200px;
+  }
+
+  @include media-min(xl) {
+    width: 1400px;
+    height: 1400px;
+  }
+}
+
+.leave-top {
+  top: -55px;
+  left: -35%;
+  background-image: url("../../public/wing.png");
+}
+
+.leave-middle {
+  top: 50%;
+  right: -35%;
+  transform: translateY(-50%);
+  background-image: url("../../public/wing-m.png");
+}
+
+.leave-bottom {
+  top: auto;
+  bottom: -200px;
+  left: -25%;
+  background-image: url(../../public/wing-b.png);
+}

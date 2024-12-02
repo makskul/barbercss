@@ -1,0 +1,287 @@
+.page-c {
+  a {
+    text-decoration: underline;
+  }
+
+  li {
+    margin-bottom: 4px;
+  }
+
+  h2 {
+    margin-bottom: 8px;
+  }
+}
+
+/* Sticker */
+.sticker-block {
+  background: $green-loft-400;
+  box-sizing: border-box;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+  width: calc(100% - 30px);
+
+  @include media-min(md) {
+    flex-direction: row;
+    width: auto;
+  }
+
+  @include media-min(lg) {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 0;
+  }
+
+  @include media-min(xl) {
+    width: 520px;
+  }
+
+  @include media-min(xxl) {
+    right: 0;
+    width: 611px;
+  }
+
+  & .sticker-link {
+    background: url("../../public/sticker-arrow.png") no-repeat calc(100% - 6px) 50% $body-bg;
+    border-radius: 6px;
+    display: block;
+    padding: 12px 20px;
+    padding-right: 25px;
+    color: $green-loft-400;
+    font-size: 18px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 250px;
+
+    @include media-min(xl) {
+      padding-right: 20px;
+      width: 220px;
+    }
+
+    @include media-min(xxl) {
+      padding-right: 20px;
+      width: 250px;
+    }
+  }
+
+  & .sticker-link:first-child {
+    margin-bottom: 11px;
+  }
+  & .sticker-link:hover {
+    opacity: 0.95;
+  }
+
+  & .sticker-texts {
+    display: flex;
+    align-items: center;
+    padding-bottom: 12px;
+
+    @include media-min(md) {
+      padding-bottom: 0;
+    }
+
+    @include media-min(xl) {
+      padding-left: 30px;
+    }
+  }
+
+  & .sticker-title {
+    color: $beige-300;
+    font-size: 26px;
+    text-transform: uppercase;
+    margin-left: 15px;
+  }
+}
+
+.sticker-arrow-block {
+  display: none;
+  background: $body-bg;
+  box-shadow: -2px 1px 7px 0px rgba(0, 0, 0, 0.5);
+  border: 2px solid $green-loft-400;
+  border-radius: 7px;
+  box-sizing: border-box;
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  left: -28px;
+  padding-top: 18px;
+  text-align: center;
+
+  @include media-min(md) {
+    display: block;
+  }
+
+  & .img {
+    display: inline-block;
+  }
+}
+
+.accordion {
+  width: 100%;
+  margin: 0 auto 30px;
+
+  .accordion-item {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .accordion-header {
+    color: $white;
+    padding: 37px 15px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 23px;
+    line-height: 26px;
+    box-shadow: 20px 5px 7px 0 $yellow-500;
+    width: calc(100% - 112px);
+    position: relative;
+
+    &.active {
+      box-shadow: none;
+    }
+
+    & .icon {
+      content: " ";
+      background: url(../../public/yellow-arrow.svg) no-repeat center center;
+      position: absolute;
+      width: 34px;
+      height: 100px;
+      z-index: 1;
+      left: 90%;
+      top: 0;
+      transition: transform 0.2555s linear;
+    }
+
+    &.active .icon {
+      transform: skew(20deg) rotate(180deg);
+      left: calc(90% - 1px);
+    }
+
+    &::after {
+      right: -18px;
+    }
+  }
+
+  .accordion-content {
+    display: none;
+    background-color: $beige-600;
+    box-sizing: border-box;
+    color: $white;
+    border-radius: 0 0 5px 5px;
+    font-size: 18px;
+    width: calc(100% - 112px);
+    box-shadow: 1px 4px 7px #F7D414;
+    padding: 45px 25px;
+  }
+
+  .accordion-content p {
+    margin: 0;
+  }
+}
+
+.article-content {
+  display: flex;
+  margin-bottom: 30px;
+
+  @include media-max(md) {
+    flex-wrap: wrap;
+  }
+
+  &.gap {
+    gap: 40px;
+  }
+
+  &.photo-h .block-photo {
+    width: 100%;
+
+    @include media-min(md) {
+      width: 50%;
+    }
+
+    @include media-min(lg) {
+      width: 65%;
+    }
+  }
+
+  &.photo-h .article-text {
+    width: 100%;
+    padding-right: 10px;
+    box-sizing: border-box;
+
+    @include media-min(md) {
+      width: 50%;
+    }
+
+    @include media-min(xl) {
+      width: calc(35% + 90px);
+    }
+  }
+
+  & p,
+  & .column p,
+  &.photo-h .article-text,
+  &.photo-h .article-text p {
+    font-size: 18px;
+    line-height: 33px;
+  }
+
+  @include media-min(md) {
+    margin-bottom: 46px;
+  }
+
+  @include media-min(lg) {
+    margin-bottom: 92px;
+  }
+}
+
+.row-icon img {
+  min-width: 75px;
+  width: 75px;
+
+  @include media-min(lg) {
+    height: 128px;
+    width: auto;
+  }
+}
+
+.row-gradient {
+  background: linear-gradient(269.76deg, #E7C583 -6.07%, rgba(229, 200, 145, 0.833906) 10.3%, rgba(217, 217, 217, 0) 92.52%);
+  border-radius: 20px;
+  padding-right: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  height: 120px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  @include media-min(lg) {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 140px;
+    padding-right: 80px;
+    width: calc(100% - 328px);
+    min-height: 140px;
+    box-sizing: border-box;
+  }
+
+  & > .text {
+    margin-bottom: 0;
+    padding-left: 20px;
+    line-height: 1;
+
+    @include media-min(lg) {
+      margin-bottom: 0;
+    }
+  }
+}
