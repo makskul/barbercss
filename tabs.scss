@@ -103,6 +103,15 @@
     }
   }
 
+  & .secondary-link {
+    color: $beige;
+
+    &:hover {
+      color: $beige;
+      text-decoration: underline;
+    }
+  }
+
   &.beige-style .link {
     color: $green-loft-400;
   }
